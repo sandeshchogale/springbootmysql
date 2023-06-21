@@ -1,5 +1,6 @@
 package com.springbootmysql.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,55 +12,62 @@ import javax.persistence.Table;
 //@NoArgsConstructor
 //@AllArgsConstructor
 @Entity
-//@Table(name = "users")
+@Table(name = "users")
 public class User {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-   // @Column(nullable = false)
-    private String firstName="";
-    //@Column(nullable = false)
-    private String lastName="";
-   // @Column(nullable = false, unique = true)
+    private Integer id;
+    @Column(nullable = false)
+    private String fname;
+    @Column(nullable = false)
+    private String lname;
+    @Column(nullable = false, unique = true)
     private String email="";
     
 	public User() {
 		
 	}
 
-	public User(Long id, String firstName, String lastName, String email) {
+	public User(Integer id, String fname, String lname, String email) {
 		super();
 		this.id = id;
-		this.firstName = firstName;
-		this.lastName = lastName;
+		this.fname = fname;
+		this.lname = lname;
 		this.email = email;
 	}
-    
-	public Long getId() {
+
+	public Integer getId() {
 		return id;
 	}
-	public void setId(Long id) {
+
+	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getFirstName() {
-		return firstName;
+
+	public String getFname() {
+		return fname;
 	}
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+
+	public void setFname(String fname) {
+		this.fname = fname;
 	}
-	public String getLastName() {
-		return lastName;
+
+	public String getLname() {
+		return lname;
 	}
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+
+	public void setLname(String lname) {
+		this.lname = lname;
 	}
+
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
-    
+
     
     
 }

@@ -7,11 +7,11 @@ import com.springbootmysql.entity.User;
 public interface UserService {
     User createUser(User user);
 
-    User getUserById(Long userId);
+    User getUserById(Integer userId);
 
     List<User> getAllUsers();
 
     User updateUser(User user);
 
-    void deleteUser(Long userId);
+    void deleteUser(Integer userId);
 }
